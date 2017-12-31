@@ -3,12 +3,17 @@
         <div class="columns">
             <div class="column">
                 <div class="counter-button-container">
-                    <counter-button inactiveBackground="#e84545"
-                                    active-background="#c81919"
-                                    hover-background="#de1c1c"
-                                    box-shadow="0 15px 0 0 #b11616, 0 20px 0 0 #d1d1d1"
+                    <counter-button :icon="icon"
+                                    :icon-color="iconColor"
+                                    :inactive-background="inactiveBackground"
+                                    :active-background="activeBackground"
+                                    :hover-background="hoverBackground"
+                                    :box-shadow="boxShadow"
                                     @click="clickButton"/>
-                    <progress class="counter-progress progress" :value="activeCounter.current_value" :max="activeCounter.max_value"></progress>
+                    <progress class="counter-progress progress"
+                              :value="activeCounter.current_value"
+                              :max="activeCounter.max_value"></progress>
+                    <theme-editor></theme-editor>
                 </div>
             </div>
         </div>
@@ -17,19 +22,43 @@
 
 <script>
   import CounterButton from "./Counter-Button";
+  import ThemeEditor from './Theme-Editor';
+  import Color from 'color';
 
   export default {
     components: {
-      CounterButton
+      CounterButton,
+      ThemeEditor
     },
     name: "home",
     computed: {
       activeCounter: function () {
         return this.$store.state.Counter.activeCounter;
+      },
+      icon() {
+        return this.$store.state.Theme.activeTheme.icon;
+      },
+      iconColor() {
+        return this.$store.state.Theme.activeTheme.iconColor;
+      },
+      primaryColor() {
+        return this.$store.state.Theme.activeTheme.primaryColor;
+      },
+      inactiveBackground() {
+        return this.primaryColor;
+      },
+      activeBackground() {
+        return Color(this.primaryColor).darken(.05).string();
+      },
+      hoverBackground() {
+        return Color(this.primaryColor).saturate(.15).string();
+      },
+      boxShadow() {
+        return '0 15px 0 0 ' + Color(this.primaryColor).darken(.3).string() + ', 0 20px 0 0 #d1d1d1';
       }
     },
     methods: {
-      clickButton () {
+      clickButton() {
         this.$store.dispatch("incrementActiveCounter");
       }
     }

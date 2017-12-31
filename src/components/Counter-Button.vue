@@ -46,7 +46,7 @@
       }
     },
     computed: {
-      background () {
+      background() {
         if (this.isHovered) {
           if (this.isActive) {
             return this.activeBackground;
@@ -58,7 +58,7 @@
         }
       }
     },
-    data () {
+    data() {
       return {
         isHovered: false,
         isActive: false
@@ -87,6 +87,7 @@
         align-items: center;
         justify-content: center;
     }
+
     .counter-button-icon {
         font-size: 5vw;
     }
