@@ -4,7 +4,26 @@ const state = {
     iconColor: '',
     primaryColor: '#e84545'
   },
-  presetThemes: []
+  presetThemes: {
+    classic: {
+      display: 'Classic',
+      icon: '',
+      iconColor: '',
+      primaryColor: '#e84545'
+    },
+    sigphi: {
+      display: 'Sigma Phi Mu',
+      icon: 'fa-anchor',
+      iconColor: '#fff',
+      primaryColor: '#47D2E9'
+    },
+    amazon: {
+      display: 'Amazon',
+      icon: 'fa-amazon',
+      iconColor: '#fff',
+      primaryColor: '#ff9900'
+    }
+  }
 };
 
 const mutations = {
@@ -16,6 +35,9 @@ const mutations = {
   },
   setPrimaryColor (state, value) {
     state.activeTheme.primaryColor = value;
+  },
+  usePresetTheme (state, value) {
+    state.activeTheme = state.presetThemes[value];
   }
 };
 

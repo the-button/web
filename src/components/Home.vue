@@ -13,7 +13,6 @@
                     <progress class="counter-progress progress"
                               :value="activeCounter.current_value"
                               :max="activeCounter.max_value"></progress>
-                    <theme-editor></theme-editor>
                 </div>
             </div>
         </div>
@@ -22,17 +21,15 @@
 
 <script>
   import CounterButton from "./Counter-Button";
-  import ThemeEditor from './Theme-Editor';
   import Color from 'color';
 
   export default {
     components: {
       CounterButton,
-      ThemeEditor
     },
     name: "home",
     computed: {
-      activeCounter: function () {
+      activeCounter() {
         return this.$store.state.Counter.activeCounter;
       },
       icon() {
@@ -78,5 +75,11 @@
     .counter-progress {
         width: 15vw;
         margin-top: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .counter-progress {
+            width: 50vw;
+        }
     }
 </style>

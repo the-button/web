@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="field is-grouped">
+        <div class="field">
+            <label class="label">Icon</label>
             <div class="control has-icons-left">
                 <input class="input"
                        type="text"
@@ -11,6 +12,9 @@
                        v-bind:class="icon"></i>
                 </span>
             </div>
+        </div>
+        <div class="field">
+            <label class="label">Icon color</label>
             <div class="control has-icons-left">
                 <input class="input"
                        type="text"
@@ -21,6 +25,9 @@
                        v-bind:style="{ color: iconColor }"></i>
                 </span>
             </div>
+        </div>
+        <div class="field">
+            <label class="label">Primary color</label>
             <div class="control has-icons-left">
                 <input class="input"
                        type="text"

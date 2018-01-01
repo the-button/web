@@ -88,6 +88,13 @@
         justify-content: center;
     }
 
+    @media screen and (max-width: 768px) {
+        .counter-button {
+            height: 50vw;
+            width: 50vw;
+        }
+    }
+
     .counter-button-icon {
         font-size: 5vw;
     }
