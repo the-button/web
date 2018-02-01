@@ -8,11 +8,6 @@ import Theme from './modules/theme';
 Vue.use(Vuex);
 Vue.use(VueResource);
 
-Vue.http.interceptors.push(function (request, next) {
-  // request.headers.set('Authorization', 'Bearer ' + localStorage.getItem('jwt'));
-  next();
-});
-
 export default new Vuex.Store({
   modules: {
     Counter,

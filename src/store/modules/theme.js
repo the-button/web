@@ -1,8 +1,9 @@
 const state = {
   activeTheme: {
-    icon: '',
-    iconColor: '',
-    primaryColor: '#e84545'
+    display: 'Sigma Phi Mu',
+    icon: 'fa-anchor',
+    iconColor: '#fff',
+    primaryColor: '#47D2E9'
   },
   presetThemes: {
     classic: {

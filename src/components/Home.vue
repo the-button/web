@@ -10,9 +10,10 @@
                                     :hover-background="hoverBackground"
                                     :box-shadow="boxShadow"
                                     @click="clickButton"/>
-                    <progress class="counter-progress progress"
-                              :value="activeCounter.current_value"
-                              :max="activeCounter.max_value"></progress>
+                    <counter-progress :currentValue="counter.currentValue"
+                                      :maxValue="counter.maxValue"
+                                      :primaryColor="primaryColor"/>
+                    <theme-editor/>
                 </div>
             </div>
         </div>
@@ -20,46 +21,67 @@
 </template>
 
 <script>
-  import CounterButton from "./Counter-Button";
+  import CounterButton from './Counter-Button';
   import Color from 'color';
+  import ThemeEditor from './Theme-Editor';
+  import CounterProgress from './Counter-Progress';
 
   export default {
     components: {
+      CounterProgress,
+      ThemeEditor,
       CounterButton,
     },
-    name: "home",
+    name: 'home',
+    created: function () {
+      setInterval(function () {
+        this.$store.dispatch('getCounter');
+        this.$store.dispatch('getReward');
+        if (!this.$store.state.Reward.hasViewedReward) {
+          this.showReward = true;
+        }
+      }, 1000);
+    },
+    data: function () {
+      return {
+        showReward: false
+      };
+    },
     computed: {
-      activeCounter() {
-        return this.$store.state.Counter.activeCounter;
+      counter () {
+        return this.$store.state.Counter.counter;
       },
-      icon() {
+      icon () {
         return this.$store.state.Theme.activeTheme.icon;
       },
-      iconColor() {
+      iconColor () {
         return this.$store.state.Theme.activeTheme.iconColor;
       },
-      primaryColor() {
+      primaryColor () {
         return this.$store.state.Theme.activeTheme.primaryColor;
       },
-      inactiveBackground() {
+      inactiveBackground () {
         return this.primaryColor;
       },
-      activeBackground() {
+      activeBackground () {
         return Color(this.primaryColor).darken(.05).string();
       },
-      hoverBackground() {
+      hoverBackground () {
         return Color(this.primaryColor).saturate(.15).string();
       },
-      boxShadow() {
+      boxShadow () {
         return '0 15px 0 0 ' + Color(this.primaryColor).darken(.3).string() + ', 0 20px 0 0 #d1d1d1';
+      },
+      reward () {
+        return this.$store.state.Reward.reward;
       }
     },
     methods: {
-      clickButton() {
-        this.$store.dispatch("incrementActiveCounter");
+      clickButton () {
+        this.$store.dispatch('incrementCounter');
       }
     }
-  }
+  };
 </script>
 
 <style scoped lang="scss">
@@ -70,11 +92,6 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    }
-
-    .counter-progress {
-        width: 15vw;
-        margin-top: 40px;
     }
 
     @media screen and (max-width: 768px) {
