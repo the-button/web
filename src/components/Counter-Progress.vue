@@ -1,6 +1,5 @@
 <template>
     <progress class="counter-progress progress"
-
              :value="currentValue"
              :max="maxValue">
     </progress>
@@ -17,9 +16,6 @@
       maxValue: {
         require: true,
         type: Number
-      },
-      primaryColor: {
-        type: String
       }
     }
   };
@@ -29,9 +25,5 @@
     .counter-progress {
         width: 15vw;
         margin-top: 40px;
-    }
-    .counter-progress::-webkit-progress-value {
-        color: #fff;
-        background-color: #fff;
     }
 </style>

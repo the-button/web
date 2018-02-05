@@ -21,7 +21,6 @@ const actions = {
     });
   },
   setRewardAsViewed (context) {
-
   }
 };
 

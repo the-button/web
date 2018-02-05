@@ -1,32 +1,19 @@
-import Vue from 'vue';
-
 const state = {
-  counter: {},
-  isLoaded: false
+  counter: {}
 };
 
 const mutations = {
-  setCounter (state, value) {
-    state.counter = value;
-    state.isLoaded = true;
+  SOCKET_COUNTERSTATUS (context, counter) {
+    context.counter = counter[0];
   }
 };
 
 const actions = {
-  getCounter (context) {
-    Vue.http.get('http://localhost:8080/counter/').then(response => {
-      context.commit('setCounter', response.body);
-      console.log(response.body);
-    }, response => {
-      console.log(response.body);
-    });
+  getCounterStatus (context) {
+    this._vm.$socket.emit('getCounter');
   },
   incrementCounter (context) {
-    Vue.http.post('http://localhost:8080/counter/').then(response => {
-      context.commit('setCounter', response.body);
-    }, response => {
-      console.log(response.body);
-    });
+    this._vm.$socket.emit('incrementCounter');
   }
 };
 

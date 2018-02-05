@@ -8,10 +8,7 @@
 
 <script>
   export default {
-    name: 'App',
-    created: function () {
-      this.$store.dispatch('getCounter');
-    }
+    name: 'App'
   };
 </script>
 

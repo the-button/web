@@ -11,8 +11,7 @@
                                     :box-shadow="boxShadow"
                                     @click="clickButton"/>
                     <counter-progress :currentValue="counter.currentValue"
-                                      :maxValue="counter.maxValue"
-                                      :primaryColor="primaryColor"/>
+                                      :maxValue="counter.maxValue"/>
                     <theme-editor/>
                 </div>
             </div>
@@ -34,13 +33,7 @@
     },
     name: 'home',
     created: function () {
-      setInterval(function () {
-        this.$store.dispatch('getCounter');
-        this.$store.dispatch('getReward');
-        if (!this.$store.state.Reward.hasViewedReward) {
-          this.showReward = true;
-        }
-      }, 1000);
+      this.$store.dispatch('getCounterStatus');
     },
     data: function () {
       return {
