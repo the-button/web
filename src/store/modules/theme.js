@@ -1,5 +1,6 @@
 const state = {
   activeTheme: {
+    display: 'Classic',
     icon: '',
     iconColor: '',
     primaryColor: '#e84545'

@@ -10,8 +10,10 @@
                                     :hover-background="hoverBackground"
                                     :box-shadow="boxShadow"
                                     @click="clickButton"/>
-                    <counter-progress :currentValue="counter.currentValue"
-                                      :maxValue="counter.maxValue"/>
+                    <div v-if="counter">
+                        <counter-progress :currentValue="counter.currentValue"
+                                          :maxValue="counter.maxValue"/>
+                    </div>
                     <reward-modal/>
                     <theme-editor/>
                 </div>
@@ -60,7 +62,7 @@
         return this.primaryColor;
       },
       activeBackground () {
-        return Color(this.primaryColor).darken(.05).string();
+        return Color(this.primaryColor).darken(.15).string();
       },
       hoverBackground () {
         return Color(this.primaryColor).saturate(.15).string();

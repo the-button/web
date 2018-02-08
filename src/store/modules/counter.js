@@ -1,10 +1,10 @@
 const state = {
-  counter: {}
+  counter: undefined
 };
 
 const mutations = {
   SOCKET_COUNTERSTATUS (context, counter) {
-    context.counter = counter[0];
+    context.counter = counter;
   }
 };
 
