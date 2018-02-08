@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import VueResource from 'vue-resource';
 
 import Counter from './modules/counter';
 import Theme from './modules/theme';
+import Reward from './modules/reward';
 
 Vue.use(Vuex);
-Vue.use(VueResource);
 
 export default new Vuex.Store({
   modules: {
     Counter,
-    Theme
+    Theme,
+    Reward
   },
   strict: process.env.NODE_ENV !== 'production'
 });

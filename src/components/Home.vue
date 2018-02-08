@@ -12,6 +12,7 @@
                                     @click="clickButton"/>
                     <counter-progress :currentValue="counter.currentValue"
                                       :maxValue="counter.maxValue"/>
+                    <reward-modal/>
                     <theme-editor/>
                 </div>
             </div>
@@ -24,9 +25,11 @@
   import Color from 'color';
   import ThemeEditor from './Theme-Editor';
   import CounterProgress from './Counter-Progress';
+  import RewardModal from './Reward-Modal';
 
   export default {
     components: {
+      RewardModal,
       CounterProgress,
       ThemeEditor,
       CounterButton,
