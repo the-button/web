@@ -26,4 +26,10 @@
         width: 15vw;
         margin-top: 40px;
     }
+
+    @media screen and (max-width: 768px) {
+        .counter-progress {
+            width: 50vw;
+        }
+    }
 </style>

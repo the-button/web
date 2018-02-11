@@ -3,26 +3,34 @@ const state = {
     display: 'Classic',
     icon: '',
     iconColor: '',
-    primaryColor: '#e84545'
+    primaryColor: '#e84545',
+    userNounSingular: 'user',
+    userNounPlural: 'users'
   },
   presetThemes: {
     classic: {
       display: 'Classic',
       icon: '',
       iconColor: '',
-      primaryColor: '#e84545'
+      primaryColor: '#e84545',
+      userNounSingular: 'user',
+      userNoun: 'users'
     },
     sigphi: {
       display: 'Sigma Phi Mu',
       icon: 'fa-anchor',
       iconColor: '#fff',
-      primaryColor: '#47D2E9'
+      primaryColor: '#47D2E9',
+      userNounSingular: 'anchor',
+      userNoun: 'anchors'
     },
     amazon: {
       display: 'Amazon',
       icon: 'fa-amazon',
       iconColor: '#fff',
-      primaryColor: '#ff9900'
+      primaryColor: '#ff9900',
+      userNounSingular: 'Amazonian',
+      userNoun: 'Amazonians'
     }
   }
 };

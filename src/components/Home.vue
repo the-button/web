@@ -14,7 +14,11 @@
                         <counter-progress :currentValue="counter.currentValue"
                                           :maxValue="counter.maxValue"/>
                     </div>
-                    <reward-modal/>
+                    <connected-users :connectedUsers="connectedUsers"
+                                     :userNounSingular="userNounSingular"
+                                     :userNounPlural="userNounPlural"/>
+                    <reward-modal :reward="reward"
+                                  :rewards="rewards"/>
                 </div>
             </div>
         </div>
@@ -27,17 +31,20 @@
   import ThemeEditor from './Theme-Editor';
   import CounterProgress from './Counter-Progress';
   import RewardModal from './Reward-Modal';
+  import ConnectedUsers from './Connected-Users';
 
   export default {
     components: {
+      ConnectedUsers,
       RewardModal,
       CounterProgress,
       ThemeEditor,
       CounterButton,
     },
     name: 'home',
-    created: function () {
+    beforeCreate: function () {
       this.$store.dispatch('getCounterStatus');
+      this.$store.dispatch('getConnectedUsers');
     },
     data: function () {
       return {
@@ -69,8 +76,20 @@
       boxShadow () {
         return '0 15px 0 0 ' + Color(this.primaryColor).darken(.3).string() + ', 0 20px 0 0 #d1d1d1';
       },
+      rewards () {
+        return this.$store.state.Reward.rewards;
+      },
       reward () {
         return this.$store.state.Reward.reward;
+      },
+      connectedUsers () {
+        return this.$store.state.ConnectedUsers.connectedUsers;
+      },
+      userNounSingular () {
+        return this.$store.state.Theme.activeTheme.userNounSingular;
+      },
+      userNounPlural () {
+        return this.$store.state.Theme.activeTheme.userNounPlural;
       }
     },
     methods: {

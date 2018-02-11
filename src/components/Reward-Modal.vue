@@ -15,13 +15,17 @@
 <script>
   export default {
     name: 'reward-modal',
+    props: {
+      rewards: {
+        required: true,
+        type: Object
+      },
+      reward: {
+        type: Object
+      }
+    },
     computed: {
-      rewards () {
-        return this.$store.state.Reward.rewards;
-      },
-      reward () {
-        return this.$store.state.Reward.reward;
-      },
+      // TODO this should be passed as a prop
       open: {
         get: function () {
           return this.$store.state.Reward.open;
