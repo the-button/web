@@ -39,7 +39,5 @@
 </script>
 
 <style scoped lang="scss">
-    .reward--image {
-        /*max-width: 10vw;*/
-    }
+
 </style>

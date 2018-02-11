@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{ userPhrase }}</p>
+        <div class="connectedUsersPhrase">{{ connectedUsersPhrase }}</div>
     </div>
 </template>
 
@@ -22,19 +22,21 @@
       }
     },
     computed: {
-      userPhrase: function () {
+      connectedUsersPhrase: function () {
         if (this.connectedUsers === 1) {
           return 'There are no other ' + this.userNounPlural + ' here now';
         } else if (this.connectedUsers === 2) {
-          return 'There is ' + this.connectedUsers + ' other ' + this.userNounSingular + ' here now';
+          return 'There is ' + this.connectedUsers - 1 + ' other ' + this.userNounSingular + ' here now';
         } else {
-          return 'There are ' + this.connectedUsers + ' other ' + this.userNounPlural + ' here now';
+          return 'There are ' + this.connectedUsers - 1 + ' other ' + this.userNounPlural + ' here now';
         }
       }
     }
   };
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    .connectedUsersPhrase {
+        padding-top: 20px;
+    }
 </style>
