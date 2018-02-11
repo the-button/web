@@ -15,7 +15,6 @@
                                           :maxValue="counter.maxValue"/>
                     </div>
                     <reward-modal/>
-                    <theme-editor/>
                 </div>
             </div>
         </div>

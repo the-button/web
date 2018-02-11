@@ -1,6 +1,14 @@
 <template>
-    <div>
-        {{ reward }}
+    <div class="modal" v-bind:class="{ 'is-active' : open}">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <template v-if="reward && reward.type === 'image'">
+                <p class="image is-4by3">
+                    <img :src="reward.url" class="reward--image">
+                </p>
+            </template>
+        </div>
+        <button class="modal-close is-large" aria-label="close" v-on:click="open = false"></button>
     </div>
 </template>
 
@@ -14,13 +22,20 @@
       reward () {
         return this.$store.state.Reward.reward;
       },
-      open () {
-        return this.$store.state.Reward.open;
+      open: {
+        get: function () {
+          return this.$store.state.Reward.open;
+        },
+        set: function (open) {
+          this.$store.commit('setOpen', open);
+        }
       }
     }
   };
 </script>
 
 <style scoped lang="scss">
-
+    .reward--image {
+        /*max-width: 10vw;*/
+    }
 </style>
