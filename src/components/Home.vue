@@ -10,7 +10,7 @@
                                     :hover-background="hoverBackground"
                                     :box-shadow="boxShadow"
                                     @click="clickButton"/>
-                    <div v-if="counter">
+                    <div v-if="counter && counter.currentValue">
                         <counter-progress :currentValue="counter.currentValue"
                                           :maxValue="counter.maxValue"/>
                     </div>

@@ -4,6 +4,8 @@ const state = {
 
 const mutations = {
   SOCKET_COUNTERSTATUS (context, counter) {
+    // TODO when the page is first loaded, this statement shows twice. The first time it only shows '1', the second time it diplays the expected output
+    // console.log(counter);
     context.counter = counter;
   }
 };
