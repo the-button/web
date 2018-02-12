@@ -17,7 +17,7 @@
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.7.2",
-    "raven": "^2.4.1",
+    "raven-js": "^3.22.2",
     "sass-loader": "^6.0.6",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
