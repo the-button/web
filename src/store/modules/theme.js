@@ -1,15 +1,15 @@
 const state = {
   activeTheme: {
-    display: 'Sigma Phi Mu',
-    icon: 'fa-anchor',
-    iconColor: '#fff',
-    primaryColor: '#47D2E9',
-    userNounSingular: 'anchor',
-    userNounPlural: 'anchors',
+    display: 'Classic',
+    icon: '',
+    iconColor: '',
+    primaryColor: '#e84545',
+    userNounSingular: 'user',
+    userNounPlural: 'users',
     reward: {
-      display: 'Sigma Phi Mu Letters',
+      display: 'Puppy',
       type: 'image',
-      url: 'https://scontent-dft4-3.xx.fbcdn.net/v/t1.0-9/22552458_10214767474565309_5973073763311704070_n.jpg?oh=54d36bcfd76372e6d811fbe680adadf1&oe=5B1B4E52'
+      url: 'http://theprojectheal.org/wp-content/uploads/2016/01/Aaaaaawwwwwwwwww-Sweet-puppies-9415255-1600-1200.jpg'
     }
   },
   presetThemes: {
