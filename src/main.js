@@ -15,7 +15,8 @@ Raven.config('https://f7fb18c3c7194c9589192cc0aab51c84@sentry.io/287017')
 
 Vue.config.productionTip = false;
 
-Vue.use(vueSocketio, 'http://localhost:8080', store);
+let socketIoServer = process.env.API_URL || 'http://localhost:8080';
+Vue.use(vueSocketio, socketIoServer, store);
 
 /* eslint-disable no-new */
 new Vue({
