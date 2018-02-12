@@ -1,11 +1,16 @@
 const state = {
   activeTheme: {
-    display: 'Classic',
-    icon: '',
-    iconColor: '',
-    primaryColor: '#e84545',
-    userNounSingular: 'user',
-    userNounPlural: 'users'
+    display: 'Sigma Phi Mu',
+    icon: 'fa-anchor',
+    iconColor: '#fff',
+    primaryColor: '#47D2E9',
+    userNounSingular: 'anchor',
+    userNounPlural: 'anchors',
+    reward: {
+      display: 'Sigma Phi Mu Letters',
+      type: 'image',
+      url: 'https://scontent-dft4-3.xx.fbcdn.net/v/t1.0-9/22552458_10214767474565309_5973073763311704070_n.jpg?oh=54d36bcfd76372e6d811fbe680adadf1&oe=5B1B4E52'
+    }
   },
   presetThemes: {
     classic: {
@@ -14,7 +19,12 @@ const state = {
       iconColor: '',
       primaryColor: '#e84545',
       userNounSingular: 'user',
-      userNoun: 'users'
+      userNounPlural: 'users',
+      reward: {
+        display: 'Puppy',
+        type: 'image',
+        url: 'http://theprojectheal.org/wp-content/uploads/2016/01/Aaaaaawwwwwwwwww-Sweet-puppies-9415255-1600-1200.jpg'
+      }
     },
     sigphi: {
       display: 'Sigma Phi Mu',
@@ -22,7 +32,12 @@ const state = {
       iconColor: '#fff',
       primaryColor: '#47D2E9',
       userNounSingular: 'anchor',
-      userNoun: 'anchors'
+      userNounPlural: 'anchors',
+      reward: {
+        display: 'Sigma Phi Mu Letters',
+        type: 'image',
+        url: 'https://scontent-dft4-3.xx.fbcdn.net/v/t1.0-9/22552458_10214767474565309_5973073763311704070_n.jpg?oh=54d36bcfd76372e6d811fbe680adadf1&oe=5B1B4E52'
+      }
     },
     amazon: {
       display: 'Amazon',
@@ -30,7 +45,12 @@ const state = {
       iconColor: '#fff',
       primaryColor: '#ff9900',
       userNounSingular: 'Amazonian',
-      userNoun: 'Amazonians'
+      userNounPlural: 'Amazonians',
+      reward: {
+        display: 'Amazon Spheres',
+        type: 'image',
+        url: 'https://archpaper.com/wp-content/uploads/2018/01/Amazon-spheres-NBBJ-hero-construction.jpg'
+      }
     }
   }
 };

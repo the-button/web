@@ -17,8 +17,11 @@
                     <connected-users :connectedUsers="connectedUsers"
                                      :userNounSingular="userNounSingular"
                                      :userNounPlural="userNounPlural"/>
-                    <reward-modal :reward="reward"
-                                  :rewards="rewards"/>
+                    <div v-if="reward">
+                        <reward-modal :reward="processedReward"
+                                      :rewards="rewards"
+                                      :activeTheme="activeTheme"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,6 +55,9 @@
       };
     },
     computed: {
+      activeTheme () {
+        return this.$store.state.Theme.activeTheme;
+      },
       counter () {
         return this.$store.state.Counter.counter;
       },
@@ -81,6 +87,9 @@
       },
       reward () {
         return this.$store.state.Reward.reward;
+      },
+      processedReward () {
+        return this.$store.getters.getProcessedReward;
       },
       connectedUsers () {
         return this.$store.state.ConnectedUsers.connectedUsers;

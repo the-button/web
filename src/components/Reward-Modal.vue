@@ -2,7 +2,7 @@
     <div class="modal" v-bind:class="{ 'is-active' : open}">
         <div class="modal-background"></div>
         <div class="modal-content">
-            <template v-if="reward && reward.type === 'image'">
+            <template v-if="reward.type === 'image'">
                 <p class="image is-4by3">
                     <img :src="reward.url" class="reward--image">
                 </p>
@@ -21,6 +21,11 @@
         type: Object
       },
       reward: {
+        required: true,
+        type: Object
+      },
+      activeTheme: {
+        required: true,
         type: Object
       }
     },
