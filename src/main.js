@@ -5,7 +5,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 import vueSocketio from 'vue-socket.io';
-import VueAnalytics from 'vue-analytics'
+import VueAnalytics from 'vue-analytics';
 
 import 'bulma';
 import 'font-awesome/css/font-awesome.min.css';
