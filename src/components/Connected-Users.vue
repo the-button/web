@@ -23,7 +23,7 @@
     },
     computed: {
       connectedUsersPhrase: function () {
-        if (this.connectedUsers === 1) {
+        if (this.connectedUsers < 2) {
           return 'There are no other ' + this.userNounPlural + ' here now';
         } else if (this.connectedUsers === 2) {
           return 'There is ' + (this.connectedUsers - 1) + ' other ' + this.userNounSingular + ' here now';

@@ -9,7 +9,7 @@
                                     :active-background="activeBackground"
                                     :hover-background="hoverBackground"
                                     :box-shadow="boxShadow"
-                                    @click="clickButton"/>
+                                    @click.native="clickButton"/>
                     <div v-if="counter !== undefined">
                         <counter-progress :currentValue="counter.currentValue"
                                           :maxValue="counter.maxValue"/>
