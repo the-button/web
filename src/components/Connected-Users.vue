@@ -26,9 +26,9 @@
         if (this.connectedUsers === 1) {
           return 'There are no other ' + this.userNounPlural + ' here now';
         } else if (this.connectedUsers === 2) {
-          return 'There is ' + this.connectedUsers - 1 + ' other ' + this.userNounSingular + ' here now';
+          return 'There is ' + (this.connectedUsers - 1) + ' other ' + this.userNounSingular + ' here now';
         } else {
-          return 'There are ' + this.connectedUsers - 1 + ' other ' + this.userNounPlural + ' here now';
+          return 'There are ' + (this.connectedUsers - 1) + ' other ' + this.userNounPlural + ' here now';
         }
       }
     }
